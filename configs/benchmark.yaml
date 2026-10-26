@@ -1,0 +1,6 @@
+seed: 42
+initial_points: 220
+evaluation_window: 40
+cadences: [7, 14, 28]
+datasets: 12
+output_dir: artifacts

@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "anomaly-bench"
+version = "0.1.0"
+description = "Leakage-safe benchmark for non-stationary sensor anomaly detection"
+requires-python = ">=3.11"
+dependencies = ["numpy==2.2.1", "pandas==2.2.3", "scipy==1.14.1", "scikit-learn==1.6.0", "matplotlib==3.10.0", "PyYAML==6.0.2", "streamlit==1.41.1"]
+
+[project.optional-dependencies]
+deep = ["torch==2.5.1", "xgboost==2.1.3"]
+dev = ["pytest==8.3.4", "ruff==0.8.4", "mypy==1.14.1"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+ignore = ["E701", "E702"]
+
+[tool.mypy]
+python_version = "3.11"
+ignore_missing_imports = true
+strict = true
